@@ -13,8 +13,8 @@ Version: 1.0
 define( 'LISTO_VERSION', '1.0' );
 define( 'LISTO_MODULES_DIR', path_join( dirname( __FILE__ ), 'modules' ) );
 
-interface Listo {
-	public function get_items();
+abstract class Listo {
+	abstract static function get_items();
 }
 
 function listo( $type, $args = '' ) {
@@ -36,13 +36,11 @@ function listo( $type, $args = '' ) {
 		}
 	}
 
-	$listo = new $class;
-
-	if ( ! is_callable( array( $listo, 'get_items' ) ) ) {
+	if ( ! is_callable( array( $class, 'get_items' ) ) ) {
 		return false;
 	}
 
-	return $listo->get_items( $args );
+	return $class::get_items( $args );
 }
 
 ?>
