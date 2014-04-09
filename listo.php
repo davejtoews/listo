@@ -19,7 +19,8 @@ abstract class Listo {
 
 function listo( $type, $args = '' ) {
 	$list_types = array(
-		'countries' => 'Listo_Countries' );
+		'countries' => 'Listo_Countries',
+		'us_subdivisions' => 'Listo_US_Subdivisions' );
 
 	if ( ! isset( $list_types[$type] ) ) {
 		return false;
