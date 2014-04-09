@@ -62,7 +62,28 @@ class Listo_US_Subdivisions extends Listo {
 		'wv' => "West Virginia",
 		'wy' => "Wyoming" );
 
+	static $groups = array(
+		'states' => array( 'ak', 'al', 'ar', 'az', 'ca', 'co', 'ct', 'de',
+			'fl', 'ga', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma',
+			'md', 'me', 'mi', 'mn', 'mo', 'ms', 'mt', 'nc', 'nd', 'ne', 'nh',
+			'nj', 'nm', 'nv', 'ny', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd',
+			'tn', 'tx', 'ut', 'va', 'vt', 'wa', 'wi', 'wv', 'wy' ),
+		'districts' => array( 'dc' ),
+		'outlying_areas' => array( 'as', 'gu', 'mp', 'pr', 'um', 'vi' ) );
+
 	public static function get_items( $args = '' ) {
+		$defaults = array(
+			'group' => null );
+
+		$args = wp_parse_args( $args, $defaults );
+
+		$group = $args['group'];
+
+		if ( $group && isset( self::$groups[$group] ) ) {
+			return array_intersect_key( self::$items,
+				array_fill_keys( self::$groups[$group], '' ) );
+		}
+
 		return self::$items;
 	}
 
