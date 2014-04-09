@@ -22,6 +22,8 @@ function listo( $type, $args = '' ) {
 		'countries' => 'Listo_Countries',
 		'us_subdivisions' => 'Listo_US_Subdivisions' );
 
+	$list_types = apply_filters( 'listo_list_types', $list_types );
+
 	if ( ! isset( $list_types[$type] ) ) {
 		return false;
 	}
