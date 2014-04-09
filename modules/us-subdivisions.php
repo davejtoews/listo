@@ -3,7 +3,7 @@
 class Listo_US_Subdivisions extends Listo {
 
 	// http://en.wikipedia.org/wiki/ISO_3166-2:US
-	static $items = array(
+	public static $items = array(
 		'ak' => "Alaska",
 		'al' => "Alabama",
 		'ar' => "Arkansas",
@@ -62,7 +62,7 @@ class Listo_US_Subdivisions extends Listo {
 		'wv' => "West Virginia",
 		'wy' => "Wyoming" );
 
-	static $groups = array(
+	public static $groups = array(
 		'states' => array( 'ak', 'al', 'ar', 'az', 'ca', 'co', 'ct', 'de',
 			'fl', 'ga', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma',
 			'md', 'me', 'mi', 'mn', 'mo', 'ms', 'mt', 'nc', 'nd', 'ne', 'nh',
