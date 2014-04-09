@@ -41,7 +41,7 @@ function listo( $type, $args = '' ) {
 		}
 	}
 
-	if ( ! is_subclass_of( $class, 'Listo' ) ) {
+	if ( ! class_exists( $class ) || ! is_subclass_of( $class, 'Listo' ) ) {
 		return false;
 	}
 
