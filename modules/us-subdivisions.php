@@ -3,7 +3,7 @@
 class Listo_US_Subdivisions extends Listo {
 
 	// http://en.wikipedia.org/wiki/ISO_3166-2:US
-	private static $items = array(
+	static $items = array(
 		'ak' => "Alaska",
 		'al' => "Alabama",
 		'ar' => "Arkansas",

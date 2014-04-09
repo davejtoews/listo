@@ -3,7 +3,7 @@
 class Listo_Currencies extends Listo {
 
 	// http://en.wikipedia.org/wiki/ISO_4217
-	private static $items = array(
+	static $items = array(
 		'aed' => "United Arab Emirates dirham",
 		'afn' => "Afghan afghani",
 		'all' => "Albanian lek",

@@ -3,7 +3,7 @@
 class Listo_Countries extends Listo {
 
 	// http://en.wikipedia.org/wiki/ISO_3166-1
-	private static $items = array(
+	static $items = array(
 		'abw' => "Aruba",
 		'afg' => "Afghanistan",
 		'ago' => "Angola",
