@@ -14,6 +14,7 @@ define( 'LISTO_VERSION', '1.0' );
 define( 'LISTO_MODULES_DIR', path_join( dirname( __FILE__ ), 'modules' ) );
 
 abstract class Listo {
+	private function __construct() {}
 	abstract static function get_items();
 }
 
@@ -40,7 +41,7 @@ function listo( $type, $args = '' ) {
 		}
 	}
 
-	if ( ! is_callable( array( $class, 'get_items' ) ) ) {
+	if ( ! is_subclass_of( $class, 'Listo' ) ) {
 		return false;
 	}
 
