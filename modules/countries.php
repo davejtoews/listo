@@ -254,6 +254,30 @@ class Listo_Countries implements Listo {
 		'zmb' => "Zambia",
 		'zwe' => "Zimbabwe" );
 
+	private static $groups = array(
+		'un' => array( 'afg', 'ago', 'alb', 'and', 'are', 'arg', 'arm',
+			'atg', 'aus', 'aut', 'aze', 'bdi', 'bel', 'ben', 'bfa', 'bgd',
+			'bgr', 'bhr', 'bhs', 'bih', 'blr', 'blz', 'bol', 'bra', 'brb',
+			'brn', 'btn', 'bwa', 'caf', 'can', 'che', 'chl', 'chn', 'civ',
+			'cmr', 'cod', 'cog', 'col', 'com', 'cpv', 'cri', 'cub', 'cyp',
+			'cze', 'deu', 'dji', 'dma', 'dnk', 'dom', 'dza', 'ecu', 'egy',
+			'eri', 'esp', 'est', 'eth', 'fin', 'fji', 'fra', 'fsm', 'gab',
+			'gbr', 'geo', 'gha', 'gin', 'gmb', 'gnb', 'gnq', 'grc', 'grd',
+			'gtm', 'guy', 'hnd', 'hrv', 'hti', 'hun', 'idn', 'ind', 'irl',
+			'irn', 'irq', 'isl', 'isr', 'ita', 'jam', 'jor', 'jpn', 'kaz',
+			'ken', 'kgz', 'khm', 'kir', 'kna', 'kor', 'kwt', 'lao', 'lbn',
+			'lbr', 'lby', 'lca', 'lie', 'lka', 'lso', 'ltu', 'lux', 'lva',
+			'mar', 'mco', 'mda', 'mdg', 'mdv', 'mex', 'mhl', 'mkd', 'mli',
+			'mlt', 'mmr', 'mne', 'mng', 'moz', 'mrt', 'mus', 'mwi', 'mys',
+			'nam', 'ner', 'nga', 'nic', 'nld', 'nor', 'npl', 'nru', 'nzl',
+			'omn', 'pak', 'pan', 'per', 'phl', 'plw', 'png', 'pol', 'prk',
+			'prt', 'pry', 'qat', 'rou', 'rus', 'rwa', 'sau', 'sdn', 'sen',
+			'sgp', 'slb', 'sle', 'slv', 'smr', 'som', 'srb', 'ssd', 'stp',
+			'sur', 'svk', 'svn', 'swe', 'swz', 'syc', 'syr', 'tcd', 'tgo',
+			'tha', 'tjk', 'tkm', 'tls', 'ton', 'tto', 'tun', 'tur', 'tuv',
+			'tza', 'uga', 'ukr', 'ury', 'usa', 'uzb', 'vct', 'ven', 'vnm',
+			'vut', 'wsm', 'yem', 'zaf', 'zmb', 'zwe' ) );
+
 	private function __construct() {}
 
 	public static function items() {
