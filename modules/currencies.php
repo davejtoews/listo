@@ -1,9 +1,9 @@
 <?php
 
-class Listo_Currencies extends Listo {
+class Listo_Currencies implements Listo {
 
 	// http://en.wikipedia.org/wiki/ISO_4217
-	public static $items = array(
+	private static $items = array(
 		'aed' => "United Arab Emirates dirham",
 		'afn' => "Afghan afghani",
 		'all' => "Albanian lek",
@@ -183,8 +183,12 @@ class Listo_Currencies extends Listo {
 		'zmw' => "Zambian kwacha",
 		'zwl' => "Zimbabwe dollar" );
 
-	public static function get_items( $args = '' ) {
+	public static function items() {
 		return self::$items;
+	}
+
+	public static function groups() {
+		return self::$groups;
 	}
 
 }

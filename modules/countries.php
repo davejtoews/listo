@@ -1,9 +1,9 @@
 <?php
 
-class Listo_Countries extends Listo {
+class Listo_Countries implements Listo {
 
 	// http://en.wikipedia.org/wiki/ISO_3166-1
-	public static $items = array(
+	private static $items = array(
 		'abw' => "Aruba",
 		'afg' => "Afghanistan",
 		'ago' => "Angola",
@@ -254,8 +254,12 @@ class Listo_Countries extends Listo {
 		'zmb' => "Zambia",
 		'zwe' => "Zimbabwe" );
 
-	public static function get_items( $args = '' ) {
+	public static function items() {
 		return self::$items;
+	}
+
+	public static function groups() {
+		return self::$groups;
 	}
 
 }

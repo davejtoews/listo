@@ -13,9 +13,9 @@ Version: 1.0
 define( 'LISTO_VERSION', '1.0' );
 define( 'LISTO_MODULES_DIR', path_join( dirname( __FILE__ ), 'modules' ) );
 
-abstract class Listo {
-	private function __construct() {}
-	abstract static function get_items();
+interface Listo {
+	public static function items();
+	public static function groups();
 }
 
 function listo( $type, $args = '' ) {
@@ -41,11 +41,30 @@ function listo( $type, $args = '' ) {
 		}
 	}
 
-	if ( ! class_exists( $class ) || ! is_subclass_of( $class, 'Listo' ) ) {
+	if ( ! is_callable( array( $class, 'items' ) ) ) {
 		return false;
 	}
 
-	return $class::get_items( $args );
+	$items = $class::items();
+
+	$args = wp_parse_args( $args, array(
+		'group' => null ) );
+
+	$group = $args['group'];
+
+	if ( ! $group ) {
+		return $items;
+	} elseif ( ! is_callable( array( $class, 'groups' ) ) ) {
+		return false;
+	}
+
+	$groups = $class::groups();
+
+	if ( isset( $groups[$group] ) ) {
+		return array_intersect_key( $items, array_fill_keys( $groups[$group], '' ) );
+	}
+
+	return $items;
 }
 
 ?>

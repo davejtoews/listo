@@ -1,9 +1,9 @@
 <?php
 
-class Listo_US_Subdivisions extends Listo {
+class Listo_US_Subdivisions implements Listo {
 
 	// http://en.wikipedia.org/wiki/ISO_3166-2:US
-	public static $items = array(
+	private static $items = array(
 		'ak' => "Alaska",
 		'al' => "Alabama",
 		'ar' => "Arkansas",
@@ -62,7 +62,7 @@ class Listo_US_Subdivisions extends Listo {
 		'wv' => "West Virginia",
 		'wy' => "Wyoming" );
 
-	public static $groups = array(
+	private static $groups = array(
 		'states' => array( 'ak', 'al', 'ar', 'az', 'ca', 'co', 'ct', 'de',
 			'fl', 'ga', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma',
 			'md', 'me', 'mi', 'mn', 'mo', 'ms', 'mt', 'nc', 'nd', 'ne', 'nh',
@@ -71,20 +71,12 @@ class Listo_US_Subdivisions extends Listo {
 		'districts' => array( 'dc' ),
 		'outlying_areas' => array( 'as', 'gu', 'mp', 'pr', 'um', 'vi' ) );
 
-	public static function get_items( $args = '' ) {
-		$defaults = array(
-			'group' => null );
-
-		$args = wp_parse_args( $args, $defaults );
-
-		$group = $args['group'];
-
-		if ( $group && isset( self::$groups[$group] ) ) {
-			return array_intersect_key( self::$items,
-				array_fill_keys( self::$groups[$group], '' ) );
-		}
-
+	public static function items() {
 		return self::$items;
+	}
+
+	public static function groups() {
+		return self::$groups;
 	}
 
 }
