@@ -183,6 +183,8 @@ class Listo_Currencies implements Listo {
 		'zmw' => "Zambian kwacha",
 		'zwl' => "Zimbabwe dollar" );
 
+	private function __construct() {}
+
 	public static function items() {
 		return self::$items;
 	}

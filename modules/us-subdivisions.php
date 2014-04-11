@@ -71,6 +71,8 @@ class Listo_US_Subdivisions implements Listo {
 		'districts' => array( 'dc' ),
 		'outlying_areas' => array( 'as', 'gu', 'mp', 'pr', 'um', 'vi' ) );
 
+	private function __construct() {}
+
 	public static function items() {
 		return self::$items;
 	}

@@ -254,6 +254,8 @@ class Listo_Countries implements Listo {
 		'zmb' => "Zambia",
 		'zwe' => "Zimbabwe" );
 
+	private function __construct() {}
+
 	public static function items() {
 		return self::$items;
 	}
