@@ -12,6 +12,7 @@ Version: 1.0
 
 define( 'LISTO_VERSION', '1.0' );
 define( 'LISTO_MODULES_DIR', path_join( dirname( __FILE__ ), 'modules' ) );
+define( 'LISTO_LANGUAGES_DIR', path_join( dirname( __FILE__ ), 'languages' ) );
 
 interface Listo {
 	public static function items();
@@ -19,6 +20,10 @@ interface Listo {
 }
 
 function listo( $type, $args = '' ) {
+	$args = wp_parse_args( $args, array(
+		'group' => null,
+		'locale' => null ) );
+
 	$list_types = array(
 		'countries' => 'Listo_Countries',
 		'us_subdivisions' => 'Listo_US_Subdivisions',
@@ -47,8 +52,20 @@ function listo( $type, $args = '' ) {
 
 	$items = $class::items();
 
-	$args = wp_parse_args( $args, array(
-		'group' => null ) );
+	if ( $args['locale'] ) {
+		$mofile = 'listo-' . $args['locale'] . '.mo';
+		$mofile = path_join( LISTO_LANGUAGES_DIR, $mofile );
+
+		if ( load_textdomain( 'listo', $mofile ) ) {
+			$translated = array();
+
+			foreach ( $items as $key => $val ) {
+				$translated[$key] = _x( $val, $type, 'listo' );
+			}
+
+			$items = $translated;
+		}
+	}
 
 	$group = $args['group'];
 
