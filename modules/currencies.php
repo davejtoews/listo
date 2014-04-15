@@ -1,8 +1,14 @@
 <?php
-
+/**
+ * The list of currencies based on ISO 4217 standard.
+ *
+ * Source: http://en.wikipedia.org/wiki/ISO_4217 ISO 4217
+ *
+ * Some special codes for funds, complementary currencies, precious metals
+ * and used in testing are excluded.
+ */
 class Listo_Currencies implements Listo {
 
-	// http://en.wikipedia.org/wiki/ISO_4217
 	private static $items = array(
 		'aed' => "United Arab Emirates dirham",
 		'afn' => "Afghan afghani",

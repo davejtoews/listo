@@ -1,8 +1,11 @@
 <?php
-
+/**
+ * The list of subdivisions of the United States based on ISO 3166-2:US standard.
+ *
+ * Source: http://en.wikipedia.org/wiki/ISO_3166-2:US ISO 3166-2:US
+ */
 class Listo_US_Subdivisions implements Listo {
 
-	// http://en.wikipedia.org/wiki/ISO_3166-2:US
 	private static $items = array(
 		'ak' => "Alaska",
 		'al' => "Alabama",

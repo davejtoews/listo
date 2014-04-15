@@ -2,7 +2,7 @@
 /*
 Plugin Name: Listo
 Plugin URI: http://contactform7.com/listo
-Description: Listo is a simple plugin which supplies several kinds of list including list of countries, states of countries, and major currencies.
+Description: Listo supplies other plugins and themes with commonly used lists.
 Author: Takayuki Miyoshi
 Author URI: http://ideasilo.wordpress.com/
 Text Domain: listo

@@ -1,8 +1,11 @@
 <?php
-
+/**
+ * The list of countries and dependent territories based on ISO 3166 standard.
+ *
+ * Source: http://en.wikipedia.org/wiki/ISO_3166-1 ISO 3166-1
+ */
 class Listo_Countries implements Listo {
 
-	// http://en.wikipedia.org/wiki/ISO_3166-1
 	private static $items = array(
 		'abw' => "Aruba",
 		'afg' => "Afghanistan",
