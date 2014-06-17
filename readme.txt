@@ -3,8 +3,8 @@ Contributors: takayukister
 Donate link: http://contactform7.com/donate/
 Tags: list, countries, subdivisions, states, currencies
 Requires at least: 3.6
-Tested up to: 3.9
-Stable tag: 1.0
+Tested up to: 3.9.1
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,3 +37,9 @@ Listo currently has the following lists and subgroups.
 
 1. Upload the entire `listo` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
+
+== Changelog ==
+
+= 1.0.1 =
+
+* Fixed: caused "unexpected T_PAAMAYIM_NEKUDOTAYIM" syntax error in PHP 5.2.
