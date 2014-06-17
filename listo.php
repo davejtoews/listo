@@ -50,7 +50,7 @@ function listo( $type, $args = '' ) {
 		return false;
 	}
 
-	$items = $class::items();
+	$items = call_user_func( array( $class, 'items' ) );
 
 	if ( $args['locale'] ) {
 		$mofile = 'listo-' . $args['locale'] . '.mo';
@@ -75,7 +75,7 @@ function listo( $type, $args = '' ) {
 		return false;
 	}
 
-	$groups = $class::groups();
+	$groups = call_user_func( array( $class, 'groups' ) );
 
 	if ( isset( $groups[$group] ) ) {
 		return array_intersect_key( $items, array_fill_keys( $groups[$group], '' ) );
