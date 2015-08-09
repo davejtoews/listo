@@ -7,10 +7,10 @@ Author: Takayuki Miyoshi
 Author URI: http://ideasilo.wordpress.com/
 Text Domain: listo
 Domain Path: /languages/
-Version: 1.0.1
+Version: 1.1
 */
 
-define( 'LISTO_VERSION', '1.0.1' );
+define( 'LISTO_VERSION', '1.1' );
 define( 'LISTO_MODULES_DIR', path_join( dirname( __FILE__ ), 'modules' ) );
 define( 'LISTO_LANGUAGES_DIR', path_join( dirname( __FILE__ ), 'languages' ) );
 
