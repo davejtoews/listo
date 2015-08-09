@@ -85,5 +85,3 @@ class Listo_US_Subdivisions implements Listo {
 	}
 
 }
-
-?>

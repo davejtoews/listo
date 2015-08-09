@@ -27,7 +27,8 @@ function listo( $type, $args = '' ) {
 	$list_types = array(
 		'countries' => 'Listo_Countries',
 		'us_subdivisions' => 'Listo_US_Subdivisions',
-		'currencies' => 'Listo_Currencies' );
+		'currencies' => 'Listo_Currencies',
+		'time_zones' => 'Listo_Time_Zones' );
 
 	$list_types = apply_filters( 'listo_list_types', $list_types );
 
@@ -83,5 +84,3 @@ function listo( $type, $args = '' ) {
 
 	return $items;
 }
-
-?>

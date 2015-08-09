@@ -315,5 +315,3 @@ class Listo_Countries implements Listo {
 	}
 
 }
-
-?>

@@ -180,5 +180,3 @@ class Listo_Currencies implements Listo {
 	}
 
 }
-
-?>
