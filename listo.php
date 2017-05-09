@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: Listo
-Plugin URI: http://contactform7.com/listo
+Plugin Name: Listo w/ Canada
+Plugin URI: https://github.com/davejtoews/listo
 Description: Listo supplies other plugins and themes with commonly used lists.
 Author: Takayuki Miyoshi
 Author URI: http://ideasilo.wordpress.com/
 Text Domain: listo
 Domain Path: /languages/
-Version: 1.1
+Version: 99999
 */
 
-define( 'LISTO_VERSION', '1.1' );
+define( 'LISTO_VERSION', '99999' );
 define( 'LISTO_MODULES_DIR', path_join( dirname( __FILE__ ), 'modules' ) );
 define( 'LISTO_LANGUAGES_DIR', path_join( dirname( __FILE__ ), 'languages' ) );
 
@@ -27,6 +27,7 @@ function listo( $type, $args = '' ) {
 	$list_types = array(
 		'countries' => 'Listo_Countries',
 		'us_subdivisions' => 'Listo_US_Subdivisions',
+		'ca_subdivisions' => 'Listo_CA_Subdivisions',
 		'currencies' => 'Listo_Currencies',
 		'time_zones' => 'Listo_Time_Zones' );
 
@@ -83,4 +84,17 @@ function listo( $type, $args = '' ) {
 	}
 
 	return $items;
+}
+
+add_filter( 'http_request_args', 'widget_disable_update', 10, 2 );
+
+function widget_disable_update( $r, $url ) {
+    if ( 0 === strpos( $url, 'https://api.wordpress.org/plugins/update-check/' ) ) {
+        $my_plugin = plugin_basename( __FILE__ );
+        $plugins = json_decode( $r['body']['plugins'], true );
+        unset( $plugins['plugins'][$my_plugin] );
+        unset( $plugins['active'][array_search( $my_plugin, $plugins['active'] )] );
+        $r['body']['plugins'] = json_encode( $plugins );
+    }
+    return $r;
 }
